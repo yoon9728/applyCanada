@@ -7,17 +7,11 @@
 body{
     height:100%;
     background-image: url(architecture-4843615_1280.jpg);
-    /* background-image:url(https://images.unsplash.com/photo-1486325212027-8081e485255e?q=80&w=2370&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D) ; */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     width: 100vw;
     height: 100vh;
-}
-.header h1{
-    margin-left: 30px;
-    margin-top: 20px;
-    font-size: 50px;
 }
 .container {
     margin-top: 250px;
@@ -26,8 +20,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 40vh;
-    color:white;
-    background-color: #333;
+    color:black;
 }
 
 .container .input-box{
@@ -36,7 +29,6 @@ body{
     height:50px;
     margin:30px 0;
     display:flex;
-
 }
 
 .input-box input{
@@ -44,21 +36,28 @@ body{
     background: transparent;
     border: none;
     outline: none;
-    border: 2px solid rgba(255,255,255,.2);
+    border: 2px solid #3b3b3b;;
     border-radius: 30px;
     font-size: 16px;
-    color:#fff;
+    color:#3b3b3b;
     padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder{
-    color:#fff;
+    color:#3b3b3b;
 }
 
 .input-box i{
     position: absolute;
     right:20px;
     margin-top: 12px;
+}
+
+.remember{
+    text-align: left;
+    margin-bottom: 40px;
+    margin-top: -20px;
+    margin-left: 12px;
 }
 
 .container .btn{
@@ -73,6 +72,7 @@ body{
     font-size: 16px;
     color: #333;
     font-weight: 600;
+    margin-top: -10px;
 }
 
 .container .btn:hover{
@@ -85,14 +85,14 @@ body{
     margin-top: 20px;
 }
 
-.signin p a{
+.signup p a{
     color: #fff;
     text-decoration: none;
     font-weight: 600;
     justify-content: space-between;
 }
 
-.signin p a:hover{
+.signup p a:hover{
     text-decoration: underline;
 }
 
@@ -123,15 +123,22 @@ body{
 
 .navbar_logo logo{
     color: var(--accent-color);
-    margin-top: 10px;
+    margin-top: -30px;
 }
-
+.navbar_logo i{
+    font-size: 50px;
+    color:red;
+    margin-left: 5px;
+    margin-top: 15px;
+    margin-right: -15px;
+}
 .navbar_menu{
     display: flex;
-    /* 리스트 점 없애주기 */
     list-style:none;
     font-size: 20px;
-    margin-top: 12px;
+    margin-top: 35px;
+    margin-left: -25px;
+    margin-right: -25px;
 }
 
 .navbar_menu li{
@@ -147,7 +154,7 @@ body{
     list-style:none;
     color:var(--text-color);
     display: flex;
-    margin-top: 18px;
+    margin-top: 40px;
 }
 
 .navbar_icons li{
@@ -162,14 +169,15 @@ body{
     display: none;
 }
 
-@media screen and (max-width:835px){
+@media screen and (max-width:800px){
     .navbar{
         flex-direction: column;
         align-items: flex-start;
         padding:8px 24px;
     }
     .navbar_menu{
-        display: none;
+        margin: -10px;
+        display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
@@ -179,9 +187,14 @@ body{
         text-align: center;
     }
     .navbar_icons{
-        display: none;
+        margin: 15px;
+        display: flex;
         justify-content: center;
         width: 100%;
+    }
+
+    .container{
+        margin-top: 70px;
     }
 
     .navbar_toggle{
@@ -190,7 +203,7 @@ body{
 
     .navbar_menu.active,
     .navbar_icons.active{
-        display: flex;
+        display: none;
     }
 }
 
