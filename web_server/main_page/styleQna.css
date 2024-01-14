@@ -27,6 +27,7 @@ body{
     padding: 8px 1px;
     margin-left: -30px;
     list-style: none;
+    background-color: red;
 }
 
 .box-sidebar .sidemenu li a{
@@ -34,17 +35,18 @@ body{
     color: black;
     font-size: 18px;
     font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+
 }
 
 .box-sidebar .sidemenu li a:hover{
-    text-decoration: underline;
+    background-color: red;
 }
 
 .box-sidebar,
 .box-contents{
     background-color: rgba(88, 88, 88, 0.2);
     padding:20px;
-    
 }
 
 .box-sidebar{

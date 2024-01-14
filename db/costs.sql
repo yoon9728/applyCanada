@@ -107,6 +107,7 @@ VALUES
     ('Preschool ( Full Day, Private, Monthly for 1 Child)', 1113.18, '650.00-2000.00'),
     ('International Primary School(Yearly for 1 Child)', 19413.79, '9500.00-35000.00');
 
+
 -- ClothingAndShoes
 CREATE TABLE ClothingAndShoes (
     Item VARCHAR(100),

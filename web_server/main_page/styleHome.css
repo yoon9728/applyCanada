@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,700&display=swap');
 *{
     margin:0;
     padding:0;
@@ -7,10 +8,12 @@
 body{
     background-color: #efefef;
 }
+
 .container{
     width:100%;
     margin: 0 0 0 0;
 }
+
 .box{
     background-color: #efefef;
     padding: 20px;
@@ -20,28 +23,26 @@ body{
     margin:0;
     width: 100%;
 }
-.box-sidebar .sidemenu li{
-    list-style: none;
-    margin-left: -30px;
-}
 
-.box-sidebar .sidemenu li a{
-    text-decoration: none;
-}
-
-.box-sidebar,
 .box-contents{
     background-color: rgba(88, 88, 88, 0.2);
     padding:20px;
-}
-
-.box-sidebar{
-    width:170px;
-    flex-shrink: 0;
-}
-
-.box-contents{
     flex-grow: 1;
+    margin-top: 50px;
+    min-height: 400px;
+}
+
+.box-contents h1{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: rgb(180, 2, 2);
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+
+.box-contents p{
+    font-family: 'Roboto Condensed', sans-serif;
+    gap:15px;
+    font-size: 25px;
 }
 
 :root{
@@ -142,7 +143,8 @@ body{
     }
 
     .container{
-        margin-top: 70px;
+        margin-top: 30px;
+        min-height: 400px;
     }
 
     .navbar_toggle{

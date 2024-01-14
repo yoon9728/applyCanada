@@ -45,3 +45,44 @@ VALUES
     ('Federal Economic Immigration', 'Federal Skilled Worker Program', 'For skilled professionals with work experience in management, professions, or technical trades.');
 
 
+-- Create ImmigrationLevelsPlan table
+CREATE TABLE ImmigrationLevelsPlan (
+    ImmigrationClass VARCHAR(50),
+    Year2024 INT,
+    Year2025 INT,
+    Year2026 INT,
+    PRIMARY KEY (ImmigrationClass)
+);
+
+-- Insert data into the ImmigrationLevelsPlan table
+INSERT INTO ImmigrationLevelsPlan (ImmigrationClass, Year2024, Year2025, Year2026)
+VALUES 
+    ('Economic', 281135, 301250, 301250),
+    ('Family', 114000, 118000, 118000),
+    ('Refugee', 76115, 72750, 72750),
+    ('Humanitarian', 13750, 8000, 8000),
+    ('Total', 485000, 500000, 500000);
+
+
+-- Create economic_programs table
+CREATE TABLE EconomicPrograms (
+    program VARCHAR(100),
+    descriptions TEXT,
+    PRIMARY KEY (program)
+);
+
+-- Insert data into the economic_programs table
+INSERT INTO EconomicPrograms (program, descriptions)
+VALUES 
+    ('Federal Skilled Worker (FSW) Program', 'This Express Entry-managed program is for immigrants with the requisite education, work experience, proficiency in English and/or French and other skills needed to establish themselves economically in Canada.'),
+    ('Federal Skilled Trades Class (FSTC)', 'The Express Entry-managed Federal Skilled Trades Class is for foreign workers with qualifications in a skilled trade.'),
+    ('Canadian Experience Class (CEC)', 'The Canadian Experience Class is managed by the Express Entry system and welcomes expressions of interest from foreign workers with Canadian work experience or recent graduates of Canadian educational institutions working in Canada.'),
+    ('Atlantic Immigration Pilot Program (AIPP)', 'The Atlantic Immigration Pilot allows designated Atlantic employers to recruit and hire foreign skilled workers or international graduates in the Atlantic Canada region (Newfoundland and Labrador, Prince Edward Island, Nova Scotia, and New Brunswick).'),
+    ('Caregivers Program', 'Canada allows eligible foreigners caring for children and people with high medical needs the opportunity to apply for Canadian permanent residence.'),
+    ('Federal Business (Start-Up Visa Program and Self-Employed Person)', 'Federal business class programs allow foreigners who meet eligibility requirements the chance to run new or pre-existing businesses in Canada.'),
+    ('Provincial Nominee Program (PNP)', 'This program allows participating provinces and territories to nominate eligible economic immigration candidates for Canadian permanent residence.'),
+    ('Quebec Skilled Worker Program and Quebec Business', 'The province of Quebec runs its own immigration system outside the federal system.');
+
+
+
+
