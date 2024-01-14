@@ -7,4 +7,5 @@ toggle.addEventListener('click',() => {
     icons.classList.toggle('active');
 
     document.body.classList.toggle('menu-open');
-});
+})
+

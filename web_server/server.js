@@ -1,13 +1,18 @@
 const express = require('express');
-const path = require('path');
 const app = express();
-const port = 3000;
+const cors = require('cors');
+const path = require('path');
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.use(cors());
+// 'web_server' 폴더를 정적 파일 경로로 설정
+app.use(express.static(path.join(__dirname, 'main_page')));
+
+// 'index.html'을 루트 경로로 제공
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'main_page', 'signin.html'));
 });
 
-app.get('/', (req, res) => {
-  // index.html 파일을 제공합니다. 이 파일은 'public' 폴더 내에 있어야 합니다.
-  res.sendFile(path.join(__dirname, '..', 'index.html'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
 });
