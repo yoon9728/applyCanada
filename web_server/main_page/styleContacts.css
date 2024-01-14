@@ -5,43 +5,13 @@
 }
 
 body{
-    background-color: #efefef;
-}
-.container{
-    width:100%;
-    margin: 0 0 0 0;
-}
-.box{
-    background-color: #efefef;
-    padding: 20px;
-    display: flex;
-    gap:20px;
-    min-height: 400px;
-    margin:0;
-    width: 100%;
-}
-.box-sidebar .sidemenu li{
-    list-style: none;
-    margin-left: -30px;
-}
-
-.box-sidebar .sidemenu li a{
-    text-decoration: none;
-}
-
-.box-sidebar,
-.box-contents{
-    background-color: rgba(88, 88, 88, 0.2);
-    padding:20px;
-}
-
-.box-sidebar{
-    width:170px;
-    flex-shrink: 0;
-}
-
-.box-contents{
-    flex-grow: 1;
+    height:100%;
+    background-image: url(architecture-4843615_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100vw;
+    height: 100vh;
 }
 
 :root{
@@ -59,7 +29,6 @@ body{
     font-family: "Source Sefif 4";
 }
 
-/* 하이퍼링크에 밑줄 컬러 없애기/재지정 */
 .navbar a{
     text-decoration: none;
     color: var(--text-color);
@@ -84,7 +53,7 @@ body{
     display: flex;
     list-style:none;
     font-size: 20px;
-    margin-top: 35px;
+    margin-top: 20px;
     margin-left: -25px;
     margin-right: -25px;
 }
@@ -93,16 +62,22 @@ body{
     padding: 8px 11px;
 }
 
-.navbar_menu li:hover{
+.navbar_menu li a:hover{
+    padding: 8px 11px;
     background-color: var(--accent-color);
     border-radius: 15px;
+}
+
+.navbar_menu p{
+    color:red;
+    margin-bottom: -10px;
 }
 
 .navbar_icons{
     list-style:none;
     color:var(--text-color);
     display: flex;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .navbar_icons li{
@@ -123,6 +98,12 @@ body{
         align-items: flex-start;
         padding:8px 24px;
     }
+    .navbar_logo{
+        margin: -10px;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;    
+    }
     .navbar_menu{
         margin: -10px;
         display: flex;
@@ -139,10 +120,7 @@ body{
         display: flex;
         justify-content: center;
         width: 100%;
-    }
-
-    .container{
-        margin-top: 70px;
+        text-align: center;
     }
 
     .navbar_toggle{
@@ -153,4 +131,36 @@ body{
     .navbar_icons.active{
         display: none;
     }
+}
+
+.urls{
+    list-style: none;
+    text-align: center;
+    border: 3px solid rgb(0, 2, 95);
+    padding:8px 12px;
+    margin: 18px 22px;
+    background-color: rgba(128, 128, 128, 0.416);
+    border-radius: 10px;
+    gap:100px;
+    margin-top: 140px;
+    padding-bottom: 20px;
+}
+
+.urls li{
+    font-size: 20px;
+    display: block;
+    padding-top: 20px;
+
+}
+
+.urls a{
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    color: black;
+    padding-top: 20px;
+}
+
+.urls a:hover{
+    text-decoration: underline;
 }

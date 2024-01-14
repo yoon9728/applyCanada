@@ -21,8 +21,9 @@ body{
     width: 100%;
 }
 .box-sidebar .sidemenu li{
-    list-style: none;
+    padding: 8px 1px;
     margin-left: -30px;
+    list-style: none;
 }
 
 .box-sidebar .sidemenu li a{
@@ -59,7 +60,6 @@ body{
     font-family: "Source Sefif 4";
 }
 
-/* 하이퍼링크에 밑줄 컬러 없애기/재지정 */
 .navbar a{
     text-decoration: none;
     color: var(--text-color);
@@ -93,9 +93,15 @@ body{
     padding: 8px 11px;
 }
 
-.navbar_menu li:hover{
+.navbar_menu li a:hover{
+    padding: 8px 11px;
     background-color: var(--accent-color);
     border-radius: 15px;
+}
+
+.navbar_menu p{
+    color:red;
+    margin-bottom: -10px;
 }
 
 .navbar_icons{

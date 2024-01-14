@@ -6,7 +6,7 @@
 
 body{
     height:100%;
-    background-image: url(/architecture-4843615_1280.jpg);
+    background-image: url(architecture-4843615_1280.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -21,6 +21,7 @@ body{
     align-items: center;
     min-height: 40vh;
     color:black;
+    background-color: #3b3b3b6f;
 }
 
 .container .input-box{
@@ -73,6 +74,7 @@ body{
     color: #333;
     font-weight: 600;
     margin-top: -10px;
+    margin-bottom: 5px;
 }
 
 .container .btn:hover{
@@ -82,7 +84,6 @@ body{
 .container .signin{
     font-size: 14.5px;
     text-align: center;
-    margin-top: 20px;
 }
 
 .signup p a{
@@ -145,7 +146,8 @@ body{
     padding: 8px 11px;
 }
 
-.navbar_menu li:hover{
+.navbar_menu li a:hover{
+    padding: 8px 11px;
     background-color: var(--accent-color);
     border-radius: 15px;
 }

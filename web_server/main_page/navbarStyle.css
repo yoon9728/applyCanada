@@ -1,65 +1,11 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-}
-
-body{
-    background-color: #efefef;
-}
-.container{
-    width:100%;
-    margin: 0 0 0 0;
-}
-.box{
-    background-color: #efefef;
-    padding: 20px;
-    display: flex;
-    gap:20px;
-    min-height: 400px;
-    margin:0;
-    width: 100%;
-}
-.box-sidebar .sidemenu li{
-    list-style: none;
-    margin-left: -30px;
-}
-
-.box-sidebar .sidemenu li a{
-    text-decoration: none;
-}
-
-.box-sidebar,
-.box-contents{
-    background-color: rgba(88, 88, 88, 0.2);
-    padding:20px;
-}
-
-.box-sidebar{
-    width:170px;
-    flex-shrink: 0;
-}
-
-.box-contents{
-    flex-grow: 1;
-}
-
 :root{
     --text-color: #f0f4f5;
     --background-color: black;
     --accent-color:red;
 }
-
-.navbar{
-    display:flex;
-    justify-content: space-between ;
-    align-items: center;
+.nav{
     background-color: var(--background-color);
-    padding: 50px 15px;
-    font-family: "Source Sefif 4";
 }
-
-/* 하이퍼링크에 밑줄 컬러 없애기/재지정 */
 .navbar a{
     text-decoration: none;
     color: var(--text-color);
@@ -117,7 +63,7 @@ body{
     display: none;
 }
 
-@media screen and (max-width:814px){
+@media screen and (max-width:800px){
     .navbar{
         flex-direction: column;
         align-items: flex-start;
