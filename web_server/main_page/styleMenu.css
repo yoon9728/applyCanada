@@ -171,3 +171,7 @@ body{
         display: none;
     }
 }
+
+.item {
+    margin-bottom: 40px; 
+}

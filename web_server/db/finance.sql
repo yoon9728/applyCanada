@@ -1,4 +1,33 @@
--- Create Scholarships table
+-- Create WorkWhileStudying table
+CREATE TABLE WorkWhileStudying (
+    Work VARCHAR(255),
+    Description TEXT,
+    Eligibility TEXT,
+    PRIMARY KEY (Work)
+);
+
+-- Insert data into the WorkWhileStudying table
+INSERT INTO WorkWhileStudying (Work, Description, Eligibility)
+VALUES 
+    ('On campus', '“On campus” refers to all the buildings on your university or college campus. You can work off campus without a work permit.', 'Full-time student at a designated learning institution (DLI)/ Enrolled in either of the post-secondary academic, vocational or professional training program or a secondary-level vocational training program (Quebec only)/ Your study program is at least 6 months long and leads to a degree, diploma or certificate/ You have a social insurance number (SIN).'),
+    ('Co-up placements', 'A co-op placement or program involves working as part of your program of study. You may work on or off campus.', 'Valid study permit./Working is integrated into your study program in Canada. You have a letter from your designated learning institution that confirms all students in your program need to complete work placements to get their degree./ Your co-op or internship is 50% or less of the total program of study.'),
+    ('Internships', 'An internship provides you with on-the-job training. When you are an intern, someone in the workplace supervises you. By working as an intern, you gain knowledge and skills to help you succeed in a trade or profession.', 'Work permit(Same with co-up students)');
+
+    -- Create StudentLoans table
+CREATE TABLE StudentLoans (
+    Type VARCHAR(50),
+    Note TEXT,
+    Eligibilities TEXT,
+    PRIMARY KEY (Type)
+);
+
+-- Insert data into the StudentLoans table
+INSERT INTO StudentLoans (Type, Note, Eligibilities)
+VALUES 
+    ('Federal', 'Provided by the government such as through the Canada Student Loan program.', 'A student pursuing post-secondary education/ Full-time students, part-time students, and students with permanent disabilities/The college of your choice as well as the study program that you are enrolled in should be supported by Canada Student Loans and Grants.');
+    ('Private', 'Provided by a privately funded organization.', 'Loan funds can only be disbursed after the amount is confirmed by the financial aid office at your school.');
+
+    -- Create Scholarships table
 CREATE TABLE Scholarships (
     AwardName VARCHAR(255),
     Description TEXT,
@@ -23,4 +52,6 @@ VALUES
     ('Business Studies Scholarship Program', 'ValueWalk is an online resource for worldwide Business news, wishes to support students in the pursuit of a Business degree.', 'Unrestricted'),
     ('CouponBirds'' "Help to Save" Scholarship', 'CouponBirds has implemented a "Help to Save" scholarship for students who need help with their college tuition fees.', 'Unrestricted'),
     ('Tocris Bioscience Scholarship Program', 'Supports students who plan to pursue a science-related degree.', 'Unrestricted');
+
+
 

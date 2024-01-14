@@ -14,7 +14,6 @@ const pool = mysql.createPool({
   database: dbconfig.database
 });
 
-// 미들웨어 설정
 app.use(express.static(path.join(__dirname, 'main_page')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -31,7 +30,7 @@ app.post('/process_login', (req, res) => {
 
     const sql = 'SELECT * FROM users WHERE email = ?';
     conn.query(sql, [email], (err, results) => {
-      conn.release(); // 연결 해제
+      conn.release();
 
       if (err) {
         console.error('SQL Error occurred:', err);
@@ -54,11 +53,9 @@ app.post('/process_login', (req, res) => {
   });
 });
 
-// 회원가입 라우트
 app.post('/produce/adduser', (req, res) => {
   const { name, email, password } = req.body;
 
-  // 비밀번호 해싱
   bcrypt.hash(password, saltRounds, (err, hash) => {
     if (err) {
       console.error('Hashing error:', err);
@@ -66,7 +63,6 @@ app.post('/produce/adduser', (req, res) => {
       return;
     }
 
-    // 데이터베이스 연결 및 쿼리 실행
     pool.getConnection((err, conn) => {
       if (err) {
         console.error("MySQL getConnection error, aborted: ", err);
@@ -123,7 +119,17 @@ app.get('/signup', (req, res) => {
   res.sendFile(path.join(__dirname, 'main_page', 'signUp.html'));
 });
 
-app.get('/api/workwhilestudying', (req, res) => {
+app.get('/api/scholarships', (req, res) => {
+  pool.query('SELECT * FROM Scholarships', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/workstudy', (req, res) => {
   pool.query('SELECT * FROM WorkWhileStudying', (err, results) => {
     if (err) {
       res.status(500).json({ error: err.message });
@@ -133,7 +139,7 @@ app.get('/api/workwhilestudying', (req, res) => {
   });
 });
 
-app.get('/api/CurrentMinimumWage', (req, res) => {
+app.get('/api/currentMinimumWage', (req, res) => {
   pool.query('SELECT * FROM CurrentMinimumWage', (err, results) => {
     if (err) {
       res.status(500).json({ error: err.message });
@@ -143,8 +149,8 @@ app.get('/api/CurrentMinimumWage', (req, res) => {
   });
 });
 
-app.get('/api/Scholarships', (req, res) => {
-  pool.query('SELECT * FROM Scholarships', (err, results) => {
+app.get('/api/studentloan', (req, res) => {
+  pool.query('SELECT * FROM StudentLoans', (err, results) => {
     if (err) {
       res.status(500).json({ error: err.message });
       return;
@@ -152,6 +158,7 @@ app.get('/api/Scholarships', (req, res) => {
     res.json(results);
   });
 });
+
 
 
 const PORT = process.env.PORT || 3000;
