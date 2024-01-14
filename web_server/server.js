@@ -159,6 +159,96 @@ app.get('/api/studentloan', (req, res) => {
   });
 });
 
+app.get('/api/restaurant', (req, res) => {
+  pool.query('SELECT * FROM Restaurants', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/market', (req, res) => {
+  pool.query('SELECT * FROM Markets', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/transportation', (req, res) => {
+  pool.query('SELECT * FROM Transportation', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/utilities', (req, res) => {
+  pool.query('SELECT * FROM Utilities', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/sportsandleisure', (req, res) => {
+  pool.query('SELECT * FROM SportsAndLeisure', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/childcare', (req, res) => {
+  pool.query('SELECT * FROM Childcare', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/clothingandshoes', (req, res) => {
+  pool.query('SELECT * FROM ClothingAndShoes', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/rentpermonth', (req, res) => {
+  pool.query('SELECT * FROM RentPerMonth', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/salariesandfinancing', (req, res) => {
+  pool.query('SELECT * FROM SalariesAndFinancing', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
 
 
 const PORT = process.env.PORT || 3000;
