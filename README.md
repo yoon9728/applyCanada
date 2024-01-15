@@ -29,6 +29,6 @@ To get started with this project, you can follow these steps:
 Feel free to contribute to the project or use it as a reference for your own journey in Canada.
 
 ## Contact
-If you have any questions or suggestions, please feel free to contact me at [your.email@example.com].
+If you have any questions or suggestions, please feel free to contact me at [dbswlgus0203@gmail.com].
 
 Happy exploring your life in Canada!
