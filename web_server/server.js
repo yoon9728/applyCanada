@@ -80,7 +80,7 @@ app.post('/produce/adduser', (req, res) => {
           return;
         } else if (result.affectedRows > 0) {
           console.log("Insertion successful");
-          res.redirect('/'); // 회원가입 성공 후 로그인 페이지로 리디렉션
+          res.redirect('/'); 
         } else {
           console.log('Insertion failed');
           res.status(500).send('<h1>Signup Failed</h1>');
@@ -131,16 +131,6 @@ app.get('/api/scholarships', (req, res) => {
 
 app.get('/api/workstudy', (req, res) => {
   pool.query('SELECT * FROM WorkWhileStudying', (err, results) => {
-    if (err) {
-      res.status(500).json({ error: err.message });
-      return;
-    }
-    res.json(results);
-  });
-});
-
-app.get('/api/currentMinimumWage', (req, res) => {
-  pool.query('SELECT * FROM CurrentMinimumWage', (err, results) => {
     if (err) {
       res.status(500).json({ error: err.message });
       return;
@@ -241,6 +231,46 @@ app.get('/api/rentpermonth', (req, res) => {
 
 app.get('/api/salariesandfinancing', (req, res) => {
   pool.query('SELECT * FROM SalariesAndFinancing', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/pgwp', (req, res) => {
+  pool.query('SELECT * FROM PGWP_Info', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/ontarioPRPath', (req, res) => {
+  pool.query('SELECT * FROM OntarioGraduatesPRPathways', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/immigration', (req, res) => {
+  pool.query('SELECT * FROM ImmigrationLevelsPlan', (err, results) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+      return;
+    }
+    res.json(results);
+  });
+});
+
+app.get('/api/economicprogram', (req, res) => {
+  pool.query('SELECT * FROM EconomicPrograms', (err, results) => {
     if (err) {
       res.status(500).json({ error: err.message });
       return;

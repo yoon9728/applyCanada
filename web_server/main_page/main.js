@@ -10,24 +10,14 @@ toggle.addEventListener('click',() => {
 })
 
 document.addEventListener("DOMContentLoaded", function () {
-    const scholarshipsLink = document.querySelector("#scholarshipsLink");
-    const workStudyLink = document.querySelector("#workStudyLink");
-    const studentLoanLink = document.querySelector("#studentLoanLink");
     const boxContents = document.querySelector(".box-contents");
-
-    scholarshipsLink.addEventListener("click", function (event) {
-        event.preventDefault();
-        fetchAndDisplay("/api/scholarships");
-    });
-
-    workStudyLink.addEventListener("click", function (event) {
-        event.preventDefault();
-        fetchAndDisplay("/api/workstudy");
-    });
-
-    studentLoanLink.addEventListener("click", function (event) {
-        event.preventDefault();
-        fetchAndDisplay("/api/studentloan");
+    const links = document.querySelectorAll(".sidemenu a");
+    links.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const endpoint = `/api/${this.id}`; // Assuming the ID of the link matches the API endpoint
+            fetchAndDisplay(endpoint);
+        });
     });
 
     function fetchAndDisplay(endpoint) {
